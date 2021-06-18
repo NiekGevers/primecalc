@@ -2,7 +2,7 @@ import argparse
 import sys 
 import math
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description = "https://github.com/NiekGevers/primecalc")
 parser.add_argument("--prime", "-p", action="store_true",
                     help="check if number is prime")
 parser.add_argument("--even", "-e", action="store_true",
@@ -13,6 +13,8 @@ parser.add_argument("--root", "-r", action="store_true",
                     help="root a number")
 parser.add_argument("--autoprime", "-a", action="store_true",
                     help="find all prime numbers in custom range")
+parser.add_argument("--prime2file", "-p2f", action="store_true",
+                    help="find all prime numbers in custom range and put them in primes.txt")
 if len(sys.argv)==1:
     parser.print_help(sys.stderr)
     sys.exit(1)
@@ -60,3 +62,18 @@ if args.autoprime:
                 break  
         else:  
             print(apnum , sep=" ", end=" ", flush=True)
+
+if args.prime2file:
+  lower = int(input("Enter lower range: "))  
+  upper = int(input("Enter upper range: "))  
+    
+  for p2fnum in range(lower,upper + 1):  
+    if p2fnum > 1:  
+        for i in range(2,p2fnum):  
+            if (p2fnum % i) == 0:  
+                break  
+        else:  
+            f = open("primes.txt", "a")
+            f.write(str(p2fnum)+" ")
+            f.close()
+            print("succesfully added",p2fnum, "to primes.txt")
