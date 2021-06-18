@@ -1,5 +1,5 @@
 # primecalc
-a python script that can easily calculate if your number is a prime number and some more features.
+a easy to use python script that can calculate if your number is a prime number and some more features.
 
 ## features
   * check if a number is prime.
