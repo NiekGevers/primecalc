@@ -8,3 +8,4 @@ a easy to use python script that can calculate if your number is a prime number 
   * show the root of a number
   * show all prime numbers in a custom range
   * put all prime numbers in a custom range and output to primes.txt
+  * calculate percentages
